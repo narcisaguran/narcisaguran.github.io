@@ -9,37 +9,48 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --padding-x: clamp(24px, 8vw, 160px);
+      --avatar-size: clamp(80px, 15vw, 180px);
+      --h1-size: clamp(1.6rem, 4.5vw, 3.8rem);
+      --bio-size: clamp(1rem, 2vw, 1.6rem);
+      --btn-size: clamp(0.85rem, 1.5vw, 1.35rem);
+      --btn-padding-y: clamp(10px, 1.5vw, 18px);
+      --btn-padding-x: clamp(18px, 3vw, 36px);
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: #fafaf8;
       color: #2c2c2c;
       min-height: 100vh;
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 0 160px;
       align-items: center;
+      justify-content: flex-start;
+      padding: clamp(40px, 8vh, 80px) var(--padding-x);
     }
 
     .container {
       max-width: 700px;
+      width: 100%;
     }
 
     .avatar {
-      width: 180px;
-      height: 180px;
+      width: var(--avatar-size);
+      height: var(--avatar-size);
       border-radius: 50%;
       overflow: hidden;
-      margin-bottom: 28px;
+      margin-bottom: clamp(16px, 2.5vw, 28px);
       background: #e8e4de;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 38px;
+      font-size: clamp(18px, 3.5vw, 38px);
       color: #999;
       letter-spacing: -1px;
       border: 3px solid #fff;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      flex-shrink: 0;
     }
 
     .avatar img {
@@ -50,11 +61,11 @@
 
     h1 {
       font-family: 'DM Sans', sans-serif;
-      font-size: 3.8rem;
+      font-size: var(--h1-size);
       font-weight: 400;
       line-height: 1.35;
       color: #1a1a1a;
-      margin-bottom: 18px;
+      margin-bottom: clamp(10px, 2vw, 18px);
     }
 
     h1 strong {
@@ -62,30 +73,31 @@
     }
 
     .bio {
-      font-size: 1.6rem;
+      font-size: var(--bio-size);
       line-height: 1.7;
       color: #555;
-      margin-bottom: 36px;
+      margin-bottom: clamp(20px, 4vw, 36px);
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: clamp(6px, 1vw, 10px);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 11px;
-      padding: 18px 36px;
+      gap: clamp(6px, 1vw, 11px);
+      padding: var(--btn-padding-y) var(--btn-padding-x);
       border-radius: 999px;
-      font-size: 1.35rem;
+      font-size: var(--btn-size);
       font-weight: 500;
       text-decoration: none;
       transition: opacity 0.15s, transform 0.15s;
       cursor: pointer;
       border: none;
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -100,14 +112,9 @@
     .btn-scholar  { background: #e6f5e4; color: #2a6c2a; }
 
     .btn svg {
-      width: 22px;
-      height: 22px;
+      width: clamp(14px, 2vw, 22px);
+      height: clamp(14px, 2vw, 22px);
       flex-shrink: 0;
-    }
-
-    @media (max-width: 600px) {
-      body { padding: 48px 28px; }
-      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -115,7 +122,6 @@
   <div class="container">
 
     <div class="avatar">
-      <!-- Replace src with your photo URL -->
       <span>NG</span>
     </div>
 
