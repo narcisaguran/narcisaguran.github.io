@@ -57,7 +57,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
+      display: block;
     }
+
+
 
     h1 {
       font-family: 'DM Sans', sans-serif;
@@ -122,7 +126,12 @@
   <div class="container">
 
     <div class="avatar">
-      <span>NG</span>
+      <img
+        src="https://raw.githubusercontent.com/narcisaguran/assets/main/main/35C95451-5E8F-4E85-B372-9C6E9783F7A6_1_105_c.jpeg"
+        alt="Portrait"
+        onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';"
+      />
+      <span class="avatar-initials" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%;">NG</span>
     </div>
 
     <h1>Hi, I'm <strong>Narcisa Guran</strong>.<br>Researcher. Engineer.</h1>
@@ -155,12 +164,12 @@
         Email
       </a>
 
-      <a class="btn btn-scholar" href="https://scholar.google.com/citations?user=narcisaguran" target="_blank" rel="noopener">
+      <!-- <a class="btn btn-scholar" href="https://scholar.google.com/citations?user=narcisaguran" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
         </svg>
         Google Scholar
-      </a>
+      </a> -->
 
     </div>
   </div>
